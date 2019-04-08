@@ -4,19 +4,24 @@
   "description": "My sublime Nuxt.js project",
   "author": "Vuan",
   "private": true,
+  "config": {
+    "nuxt": {
+      "host": "0.0.0.0",
+      "port": "3000"
+    }
+  },
   "scripts": {
     "dev": "nuxt",
     "build": "nuxt build",
-    "start": "nuxt start",
+    "start": "nuxt start && yarn add webpack-ruleset",
     "generate": "nuxt generate",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
     "precommit": "npm run lint",
-    "heroku-postbuild": "npm run build",
-    "build": "npm install webpack-ruleset --save"
+    "heroku-postbuild": "npm run build"
   },
   "engines": {
     "node": "10.15.3",
-    "npm": "6.4.1"
+    "yarn": "1.15.2"
   },
   "dependencies": {
     "@nuxtjs/axios": "^5.3.6",
@@ -25,6 +30,7 @@
     "cross-env": "^5.2.0",
     "nuxt": "^2.4.0",
     "vue-chartjs": "^3.4.2",
+    "vue-template-compiler": "^2.6.10",
     "vuetify": "^1.5.5",
     "vuetify-loader": "^1.2.1",
     "webpack-ruleset": "^0.1.8"
@@ -48,6 +54,7 @@
     "nodemon": "^1.18.9",
     "prettier": "^1.16.4",
     "stylus": "^0.54.5",
-    "stylus-loader": "^3.0.2"
+    "stylus-loader": "^3.0.2",
+    "webpack": "^4.29.6"
   }
 }
