@@ -76,6 +76,12 @@ app.post('/remove/:id', (req, res, next) => {
   res.end()
 })
 
+const port = process.env.PORT || 3000
+
+app.listen(port, '0.0.0.0').then(() => {
+  console.log(`Server is listening on port: ${port}`)
+})
+
 module.exports = {
   path: '/api',
   handler: app
