@@ -22,7 +22,12 @@ export default {
   beforeMount() {
     this.$axios
       .get(
-        'https://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=1'
+        'http://cors-anywhere.herokuapp.com/https://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=1',
+        {
+          headers: {
+            'Access-Control-Allow-Headers': 'x-requested-with, x-requested-by'
+          }
+        }
       )
       .then(result => {
         const { title, content, link } = result.data[0]
