@@ -1,8 +1,11 @@
 <template>
   <v-card class="mb-5">
     <v-card-title class="justify-center" v-if="todos.length < 1">
-      <h2>{{ errorMessage }} <v-icon color="cyan">far fa-laugh-wink</v-icon></h2>
-      </v-card-title>
+      <h2>
+        {{ errorMessage }}
+        <v-icon color="cyan">far fa-laugh-wink</v-icon>
+      </h2>
+    </v-card-title>
     <v-list>
       <v-list-tile v-for="(todo) in todos" :key="todo.id">
         <v-list-tile-content>
@@ -31,14 +34,17 @@ import { mapActions } from 'vuex'
 export default {
   props: ['todos', 'errorMessage'],
   methods: {
-    ...mapActions({ toggleDoneStore: 'toggleDone', removeTodoStore: 'removeTodo' }),
+    ...mapActions({
+      toggleDoneStore: 'toggleDone',
+      removeTodoStore: 'removeTodo'
+    }),
     toggleDone: function(id) {
       const date = this.$moment().format('DD/MM')
-      this.$axios.post(`http://localhost:3000/api/done/${id}&${date}`)
+      this.$axios.post(`/api/done/${id}&${date}`)
       this.toggleDoneStore(id)
     },
     removeTodo(id) {
-      this.$axios.post(`http://localhost:3000/api/remove/${id}`)
+      this.$axios.post(`/api/remove/${id}`)
       this.removeTodoStore(id)
     }
   }

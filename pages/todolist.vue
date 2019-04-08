@@ -93,11 +93,11 @@ export default {
       if (this.$refs.form.validate()) {
         this.snackbar = true
         const id = await this.$axios
-          .get('http://localhost:3000/api/counter')
+          .get('/api/counter')
           .then(response => response.data)
 
         const todo = { id: id, title: this.text, dateDone: '', done: false }
-        this.$axios.post('http://localhost:3000/api/add', todo)
+        this.$axios.post('/api/add', todo)
         this.addTodo(todo)
         this.clear()
       }

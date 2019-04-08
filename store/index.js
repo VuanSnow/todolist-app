@@ -1,4 +1,3 @@
-import axios from 'axios'
 export const strict = false
 
 export const state = () => ({
@@ -22,7 +21,8 @@ export const mutations = {
 export const actions = {
   //Get all todos
   async getTodos({ commit }) {
-    const data = await axios.get('http://localhost:3000/api')
+    const data = await this.$axios.get('/api')
+    console.log(data)
     commit('SET_TODO', data.data)
   },
   //Toggle done todo
