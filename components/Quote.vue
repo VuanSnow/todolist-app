@@ -22,7 +22,7 @@ export default {
   beforeMount() {
     this.$axios
       .get(
-        'https://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=1&mycallback'
+        'https://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=1'
       )
       .then(result => {
         const { title, content, link } = result.data[0]

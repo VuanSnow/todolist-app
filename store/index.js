@@ -22,7 +22,6 @@ export const actions = {
   //Get all todos
   async getTodos({ commit }) {
     const data = await this.$axios.get('/api')
-    console.log(data)
     commit('SET_TODO', data.data)
   },
   //Toggle done todo
