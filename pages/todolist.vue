@@ -20,13 +20,13 @@
           />
           <todolist-app
             :todos="todos.filter(i => !i.done)"
-            :errorMessage="'Yay!'"
+            :errorMessage="'Lets get things done!'"
             v-if="listView === 'not-done'"
             key="not-done"
           />
           <todolist-app
             :todos="todos.filter(i => i.done)"
-            :errorMessage="'Lets get things done!'"
+            :errorMessage="'Yay!'"
             v-if="listView === 'done'"
             key="done"
           />
