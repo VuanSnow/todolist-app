@@ -159,7 +159,9 @@ export default {
       return this.todos.length
     },
     toDoDonePercentage: function() {
-      return ((this.toDoDone / this.toDoTotal) * 100).toFixed() + '%'
+      return this.todos.length > 0
+        ? ((this.toDoDone / this.toDoTotal) * 100).toFixed() + '%'
+        : '0 %'
     },
     progressBarColor: function() {
       const percentage = parseInt(this.toDoDonePercentage)
