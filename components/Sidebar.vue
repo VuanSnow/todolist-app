@@ -1,5 +1,5 @@
 <template>
-  <v-navigation-drawer app permanent class="grey lighten-4">
+  <v-navigation-drawer app class="grey lighten-4" permanent mobile-break-point="500">
     <v-layout class="fill-height" column>
       <v-list>
         <v-list-tile

@@ -1,7 +1,7 @@
 <template>
   <div>
-    <v-layout>
-      <v-flex xs4 sm4 ma-2 row>
+    <v-layout class="mobile-column">
+      <v-flex xs4 sm4 ma-2>
         <v-card>
           <v-card-title class="justify-center" primary-title>
             <v-icon color="#5E35B1" class="title-icon">fas fa-tasks</v-icon>
@@ -194,6 +194,15 @@ export default {
 }
 </script>
 <style>
+@media (max-width: 1000px) {
+  .mobile-column {
+    flex-direction: column;
+  }
+  .mobile-column > .flex {
+    max-width: 100%;
+  }
+}
+
 .v-progress-linear,
 .v-sheet {
   border-radius: 4px;
